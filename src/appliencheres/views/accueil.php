@@ -1,0 +1,1 @@
+<h3>Bienvenue chers internautes !</h3>
