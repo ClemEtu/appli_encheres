@@ -1,12 +1,1 @@
-<?php
-
-/**
- * Created by PhpStorm.
- * User: Playe
- * Date: 02/03/2018
- * Time: 14:35
- */
-class header
-{
-
-}
+<h5>ICI C'EST LE HEADER</h5>

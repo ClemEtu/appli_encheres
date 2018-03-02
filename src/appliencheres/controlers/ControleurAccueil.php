@@ -2,7 +2,7 @@
 
 namespace appliencheres\controlers;
 
-class ControleurAcceuil
+class ControleurAccueil
 {
 
     public function getAccueil() {

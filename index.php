@@ -2,6 +2,8 @@
 
 include 'vendor/autoload.php';
 use \conf\Eloquent;
+use \appliencheres\controlers\ControleurAccueil;
+use \appliencheres\controlers\ControleurCommon;
 
 session_start();
 Eloquent::init('src/conf/conf.ini');
