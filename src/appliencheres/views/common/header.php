@@ -1,5 +1,18 @@
-<!-- include bootstrap CSS framework -->
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
+<!DOCTYPE html>
+<html lang="fr">
 <!-- header content -->
-<h5>ICI C'EST LE HEADER</h5>
+<head>
+    <link rel="stylesheet" href="<?= $slim->request->getRootUri(); ?>/css/appliencheres.css">
+    <link rel="stylesheet" href="<?= $slim->request->getRootUri(); ?>/css/bootstrap.min.css">
+    <title>AppliEncheres</title>
+</head>
+
+<body>
+    <header>
+        <h1 id="header-title">AppliEncheres</h1>
+        <h5 id="header-quote">vente aux enchères de vêtements et accessoires de luxe </h5>
+        <nav id="header-nav">
+            <a class="header-connection-inscription" href="<?= $slim->request->getRootUri(); ?>/simplePage/connexion">Se connecter</a>
+            <a class="header-connection-inscription" href="<?= $slim->request->getRootUri(); ?>/simplePage/inscription">S'inscrire</a>
+        </nav>
+    </header>
