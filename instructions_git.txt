@@ -1,0 +1,11 @@
+avant de travailler, 
+
+git pull
+
+
+
+après avoir fait des modif, 
+
+git add --all
+git commit -m "message"
+git push 
