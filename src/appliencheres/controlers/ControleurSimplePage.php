@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Playe
- * Date: 04/04/2018
- * Time: 19:49
- */
 
 namespace appliencheres\controlers;
 
@@ -24,6 +18,13 @@ class ControleurSimplePage
     {
         $slim = \Slim\Slim::getInstance();
         include 'src/appliencheres/views/simplePage/connexion.php';
+    }
+
+    public function deconnexion()
+    {
+        unset($_SESSION['userConnected']);
+        header('Location: ' . \Slim\Slim::getInstance()->urlFor('/'));
+        exit;
     }
 
     public function inscrireUtilisateur(){

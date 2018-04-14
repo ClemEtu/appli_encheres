@@ -15,7 +15,7 @@ class MotCle extends Model
     public $timestamps=false;
 
     public function produits() {
-        return $this->belongsToMany('appliencheres\models\Produit');
+        return $this->belongsToMany('appliencheres\models\Produit', 'produit','idProduit');
     }
 
 

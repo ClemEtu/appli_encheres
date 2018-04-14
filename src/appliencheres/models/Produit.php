@@ -15,7 +15,7 @@ class Produit extends Model
     public $timestamps=false;
 
     public function motCles() {
-        return $this->belongsToMany('appliencheres\models\MotCle');
+        return $this->belongsToMany('appliencheres\models\MotCle', 'motCle', 'libelleMotCle');
     }
 
     public function ventes() {

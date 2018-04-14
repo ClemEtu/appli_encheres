@@ -39,6 +39,19 @@ header{
     margin-top: 2%;
 }
 
+.manage-user{
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+
+.manage-user-in{
+    margin-left: 1%;
+}
+
+#solde{
+    margin-left: 1%;
+}
+
 footer{
     position: absolute;
     bottom: 0;

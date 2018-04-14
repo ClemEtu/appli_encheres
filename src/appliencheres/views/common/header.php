@@ -13,9 +13,13 @@
             <h1 id="header-title">AppliEncheres</h1>
             <h5 id="header-quote">"vente aux enchères de vêtements et accessoires de luxe !"</h5>
             <div id="header-con-inscr">
+            <?php if (isset($_SESSION['userConnected'])): ?>
+                <a class="header-deconnexion" href="<?= $slim->request->getRootUri(); ?>/simplePage/deconnexion">Se déconnecter</a>
+            <?php else: ?>
                 <a class="header-connection-inscription" href="<?= $slim->request->getRootUri(); ?>/simplePage/inscription">S'inscrire</a>
                 |
                 <a class="header-connection-inscription" href="<?= $slim->request->getRootUri(); ?>/simplePage/connexion">Se connecter</a>
+            <?php endif; ?>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -29,13 +33,14 @@
                         <a class="nav-link" href="<?= $slim->request->getRootUri(); ?>/">Accueil<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nos enchères</a>
+                        <a class="nav-link" href="<?= $slim->request->getRootUri(); ?>/produits/recherche">Nos produits</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Enchérir</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Mon compte</a>
+                        <?php if (isset($_SESSION['userConnected'])): ?>
+                            <a class="nav-link" href="<?= $slim->request->getRootUri(); ?>/user/info">Mon compte</a>
+                        <?php else: ?>
+                            <a class="nav-link disabled" href="#">Mon compte</a>
+                        <?php endif; ?>
                     </li>
                 </ul>
             </div>
