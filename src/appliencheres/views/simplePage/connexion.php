@@ -7,6 +7,8 @@ endif;
 unset($_SESSION['errors']);
 ?>
 
+<h3>Connexion</h3>
+
 <form id="form-inscription" method="POST" action="">
     <label>Pseudo</label>
     <input type="text" name="pseudo" required>
@@ -15,10 +17,11 @@ unset($_SESSION['errors']);
     <button class="button confirmation" id="btn-inscription">Se connecter</button>
 </form>
 
-<h3>Vous n'avez pas de compte ? </h3>
-
-<p>
-    <a class="button confirmation" href="<?= $slim->urlFor('/simplePage/inscription') ?>">
-        S'inscrire
-    </a>
-</p>
+<div id="txt-connexion">
+    <h5>Vous n'avez pas de compte ? </h5>
+    <p>
+        <a class="button confirmation" href="<?= $slim->urlFor('/simplePage/inscription') ?>">
+            Inscrivez-vous ici !
+        </a>
+    </p>
+</div>

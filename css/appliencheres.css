@@ -1,12 +1,42 @@
+#head-appli{
+    margin-bottom: 2%;
+}
+
 #header-title{
     text-align: center;
     font-size: 3em;
+    font-weight: bold;
 }
-#header-nav{
-    text-align: center;
-}
+
 #header-quote{
     text-align: center;
+    font-style: italic;
+}
+
+#txt-accueil{
+    margin-top: 2%;
+    text-align: center;
+}
+
+.error{
+    color: red;
+}
+
+#header-con-inscr{
+    text-align: center;
+}
+
+header{
+    margin-bottom: 2%;
+}
+
+#global{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+#txt-connexion{
+    margin-top: 2%;
 }
 
 footer{
