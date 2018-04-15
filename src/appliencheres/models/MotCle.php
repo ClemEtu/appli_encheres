@@ -12,10 +12,12 @@ use Illuminate\Database\Eloquent\Model;
 class MotCle extends Model
 {
     protected $table = 'motcle';
+    protected $primaryKey = 'libelleMotCle';
     public $timestamps=false;
 
     public function produits() {
-        return $this->belongsToMany('appliencheres\models\Produit', 'produit','idProduit');
+        //return $this->belongsToMany('appliencheres\models\Produit', 'produit','idProduit');
+        return $this->belongsToMany('appliencheres\models\Produit', 'est_reference','libelleMotCle', 'idProduit');
     }
 
 

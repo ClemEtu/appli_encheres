@@ -21,6 +21,7 @@
                 <a class="header-connection-inscription" href="<?= $slim->request->getRootUri(); ?>/simplePage/connexion">Se connecter</a>
             <?php endif; ?>
             </div>
+
         </div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="<?= $slim->request->getRootUri(); ?>/">AppliEncheres</a>
@@ -42,8 +43,19 @@
                             <a class="nav-link disabled" href="#">Mon compte</a>
                         <?php endif; ?>
                     </li>
+                    <li class="nav-item">
+                        <?php if (isset($_SESSION['userConnected'])): ?>
+                            <a class="nav-link" href="<?= $slim->request->getRootUri(); ?>/user/ventes">Mes ventes</a>
+                        <?php else: ?>
+                            <a class="nav-link disabled" href="#">Mes ventes</a>
+                        <?php endif; ?>
+                    </li>
                 </ul>
             </div>
+
+            <?php if (isset($_SESSION['userConnected'])): ?>
+                <span>Argent dispo: <?=$_SESSION['userConnected']->argentDispo ?>€</span>
+            <?php endif; ?>
         </nav>
     </header>
 <div id="global">

@@ -7,6 +7,7 @@ use \appliencheres\controlers\ControleurCommon;
 use \appliencheres\controlers\ControleurSimplePage;
 use \appliencheres\controlers\ControleurUser;
 use \appliencheres\controlers\ControleurProduit;
+use \appliencheres\controlers\ControleurVentes;
 
 session_start();
 Eloquent::init('src/conf/conf.ini');
@@ -82,9 +83,45 @@ $app->get('/produits/recherche/:libelle/:idProduit', function ($libelle, $idProd
 
 $app->post('/produits/recherche/:libelle/:idProduit', function ($libelle, $idProduit){
     $controleur = new ControleurProduit();
-    $controleur->getConfirmationEnchere($idProduit);
+    $controleur->getConfirmationEnchere($idProduit,$libelle);
 })->name('POST/produits/recherche/:libelle/:idProduit');
 
+
+$app->get('/produits/:idProduit', function ($idProduit){
+    $controleur = new ControleurProduit();
+    $controleur->getVente($idProduit);
+})->name('/produits/:idProduit');
+
+$app->post('/produits/:idProduit', function ($idProduit){
+    $controleur = new ControleurProduit();
+    $controleur->getConfirmationEnchere($idProduit, null);
+})->name('POST/produits/:idProduit');
+
+//vente
+$app->get('/user/ventes', function (){
+    $controleur = new ControleurVentes();
+    $controleur->getInfoVentes();
+})->name('/user/ventes');
+
+$app->get('/remiseEnVente/:idProduit', function ($idProduit){
+    $controleur = new ControleurVentes();
+    $controleur->remettreEnVente($idProduit);
+})->name('/remiseEnVente/:idProduit');
+
+$app->post('/remiseEnVente/:idProduit', function ($idProduit){
+    $controleur = new ControleurVentes();
+    $controleur->traiterRemiseEnVente($idProduit);
+})->name('POST/remiseEnVente/:idProduit');
+
+$app->get('/miseEnVente', function (){
+    $controleur = new ControleurVentes();
+    $controleur->mettreEnVente();
+})->name('/miseEnVente');
+
+$app->post('/miseEnVente', function (){
+    $controleur = new ControleurVentes();
+    $controleur->traiterMiseEnVente();
+})->name('POST/miseEnVente');
 
 // common
 

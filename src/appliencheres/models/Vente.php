@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vente extends Model
 {
     protected $table = 'vente';
+    protected $primaryKey = 'idVente';
     public $timestamps=false;
 
     public function encheres() {

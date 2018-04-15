@@ -13,6 +13,7 @@ class Enchere extends Model
 {
     protected $table = 'enchere';
     public $timestamps=false;
+    protected $primaryKey = "idEnchere";
 
     public function encherisseur() {
         return $this->belongsTo('appliencheres\models\Utilisateur', 'pseudo');

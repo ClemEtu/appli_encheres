@@ -12,6 +12,9 @@ use Illuminate\Database\Eloquent\Model;
 class EstReference extends Model
 {
     protected $table = 'est_reference';
+    protected $primaryKey = 'if_ref';
     public $timestamps=false;
+
+
 
 }
